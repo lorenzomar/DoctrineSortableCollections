@@ -1,0 +1,19 @@
+{
+    "name": "lorenzomar/doctrine-sortable-collections",
+    "description": "Sortable functions for Doctrine collections library",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Lorenzo Marzullo",
+            "email": "marzullo.lorenzo@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/collections": "1.2.x-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Lorenzomar\\DoctrineSortableCollections\\": "lib/"
+        }
+    }
+}
