@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Lorenzomar\DoctrineSortableCollections package.
+ * This file is part of the Lorenzomar\PHPEuroCV package.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -8,16 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Lorenzomar\DoctrineSortableCollections;
+namespace Lorenzomar\DoctrineSortableCollections\Comparer;
 
 /**
  * Interface ComparerInterface.
  *
  * Interface for the comparer
  *
- * @link    www.github.com/lorenzomar/doctrine-sortable-collections
- * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  * @package Lorenzomar\DoctrineSortableCollections
+ * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 interface ComparerInterface
 {
@@ -29,9 +31,10 @@ interface ComparerInterface
      * $o1 == $o2: 0
      * $o1 > $o2: -1
      *
-     * @param mixed $o1
-     * @param mixed $o2
+     * @param mixed $e1 first element of comparison
+     * @param mixed $e2 second element of comparison
+     *
      * @return mixed
      */
-    public function compare($o1, $o2);
+    public function compare($e1, $e2);
 }
