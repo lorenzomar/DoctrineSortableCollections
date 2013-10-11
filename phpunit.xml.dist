@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Doctrine Sortable Collections Tests Suite">
+            <directory>tests/DoctrineSortableCollections/</directory>
+        </testsuite>
+    </testsuites>
+
+    <listeners>
+        <listener class="\Mockery\Adapter\Phpunit\TestListener" />
+    </listeners>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">lib/Lorenzomar/DoctrineSortableCollections</directory>
+        </whitelist>
+    </filter>
+</phpunit>
