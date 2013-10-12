@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -10,19 +10,19 @@
  */
 
 use Mockery as m;
-use Lorenzomar\DoctrineSortableCollections\SortableArrayCollection;
-use Lorenzomar\DoctrineSortableCollections\Comparer\Comparer;
-use Lorenzomar\DoctrineSortableCollections\Comparer\CallbackComparer;
+use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\CallbackComparer;
 
 /**
  * Class CallbackComparerTest.
  *
  * @todo Add tests for all callables.
  *
- * @package Lorenzomar\PHPEuroCV
+ * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link    www.github.com/lorenzomar/PHPEuroCV
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 class CallbackComparerTest extends PHPUnit_Framework_TestCase
 {
@@ -43,7 +43,7 @@ class CallbackComparerTest extends PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Lorenzomar\DoctrineSortableCollections\SortableInterface', $this->collection);
+        $this->assertInstanceOf('DoctrineSortableCollections\SortableInterface', $this->collection);
     }
 
     public function testClosure()

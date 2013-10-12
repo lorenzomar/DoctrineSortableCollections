@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -9,10 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Lorenzomar\DoctrineSortableCollections\Comparer;
+namespace DoctrineSortableCollections\Comparer;
 
-use Lorenzomar\DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\Comparer;
 
+/**
+ * Class CallbackComparer.
+ *
+ * @package DoctrineSortableCollections
+ * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
+ */
 class CallbackComparer extends Comparer
 {
     /**

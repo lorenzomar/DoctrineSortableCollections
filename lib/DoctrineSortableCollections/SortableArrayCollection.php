@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Lorenzomar\DoctrineSortableCollections;
+namespace DoctrineSortableCollections;
 
-use Lorenzomar\DoctrineSortableCollections\SortableInterface;
-use Lorenzomar\DoctrineSortableCollections\Comparer\ComparerInterface;
+use DoctrineSortableCollections\SortableInterface;
+use DoctrineSortableCollections\Comparer\ComparerInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class SortableArrayCollection.
  *
- * @package Lorenzomar\PHPEuroCV
+ * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link    www.github.com/lorenzomar/PHPEuroCV
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 class SortableArrayCollection extends ArrayCollection implements SortableInterface
 {

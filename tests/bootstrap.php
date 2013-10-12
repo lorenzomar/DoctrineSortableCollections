@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Lorenzomar\DoctrineSortableCollections package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *

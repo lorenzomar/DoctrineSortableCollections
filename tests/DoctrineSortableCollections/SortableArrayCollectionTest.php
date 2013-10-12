@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -10,9 +10,17 @@
  */
 
 use \Mockery as m;
-use Lorenzomar\DoctrineSortableCollections\SortableArrayCollection;
-use Lorenzomar\DoctrineSortableCollections\Comparer\ComparerInterface;
+use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\ComparerInterface;
 
+/**
+ * Class SortableArrayCollectionTest.
+ *
+ * @package DoctrineSortableCollections
+ * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
+ */
 class SortableArrayCollectionTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -32,7 +40,7 @@ class SortableArrayCollectionTest extends PHPUnit_Framework_TestCase
         /**
          * Emulate an implementation of ComparerInterface to use with sort method
          */
-        $this->comparer = m::mock('stdClass, Lorenzomar\DoctrineSortableCollections\Comparer\ComparerInterface');
+        $this->comparer = m::mock('stdClass, DoctrineSortableCollections\Comparer\ComparerInterface');
     }
 
     protected function tearDown()

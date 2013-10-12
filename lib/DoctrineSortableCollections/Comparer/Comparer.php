@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Lorenzomar\DoctrineSortableCollections\Comparer;
+namespace DoctrineSortableCollections\Comparer;
 
-use InvalidArgumentException;
-use Lorenzomar\DoctrineSortableCollections\Comparer\ComparerInterface;
+use DoctrineSortableCollections\Comparer\ComparerInterface;
 
 /**
  * Class Comparer.
  *
- * @package Lorenzomar\PHPEuroCV
+ * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link    www.github.com/lorenzomar/PHPEuroCV
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 abstract class Comparer implements ComparerInterface
 {
@@ -47,7 +46,7 @@ abstract class Comparer implements ComparerInterface
     /**
      * @param string $direction
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @return self
      */
     public function setDirection($direction)
@@ -55,7 +54,7 @@ abstract class Comparer implements ComparerInterface
         $direction = strtoupper($direction);
 
         if ($direction !== self::ASC && $direction !== self::DESC) {
-            throw new InvalidArgumentException("Wrong direction");
+            throw new \InvalidArgumentException("Wrong direction");
         }
 
         $this->direction = $direction;

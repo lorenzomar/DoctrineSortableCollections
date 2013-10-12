@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-use Lorenzomar\DoctrineSortableCollections\SortableArrayCollection;
-use Lorenzomar\DoctrineSortableCollections\Comparer\Comparer;
-use Lorenzomar\DoctrineSortableCollections\Comparer\NumericalComparer;
+use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\NumericalComparer;
 
 /**
  * Class NumericalComparerTest.
  *
  * @todo write test for binary, octal and hex numbers
  *
- * @package Lorenzomar\PHPEuroCV
+ * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link    www.github.com/lorenzomar/PHPEuroCV
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 class NumericalComparerTest extends PHPUnit_Framework_TestCase
 {
@@ -43,8 +43,8 @@ class NumericalComparerTest extends PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Lorenzomar\DoctrineSortableCollections\SortableInterface', $this->collection);
-        $this->assertInstanceOf('Lorenzomar\DoctrineSortableCollections\Comparer\NumericalComparer', $this->comparer);
+        $this->assertInstanceOf('DoctrineSortableCollections\SortableInterface', $this->collection);
+        $this->assertInstanceOf('DoctrineSortableCollections\Comparer\NumericalComparer', $this->comparer);
     }
 
     public function testDirectionAsc()

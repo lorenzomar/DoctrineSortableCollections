@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
@@ -10,8 +10,16 @@
  */
 
 use Mockery as m;
-use Lorenzomar\DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\Comparer;
 
+/**
+ * Class ComparerTest.
+ *
+ * @package DoctrineSortableCollections
+ * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ * @link    www.github.com/lorenzomar/doctrine-sortable-collections
+ */
 class ComparerTest extends PHPUnit_Framework_TestCase
 {
     /**
