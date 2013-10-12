@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Lorenzomar\PHPEuroCV package.
+ * This file is part of the Lorenzomar\DoctrineSortableCollections package.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
  *
