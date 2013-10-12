@@ -28,12 +28,12 @@ class NumericalComparerTest extends PHPUnit_Framework_TestCase
     /**
      * @var SortableArrayCollection
      */
-    private $collection;
+    protected $collection;
 
     /**
      * @var NumericalComparer
      */
-    private $comparer;
+    protected $comparer;
 
     protected function setUp()
     {
@@ -126,5 +126,22 @@ class NumericalComparerTest extends PHPUnit_Framework_TestCase
     {
         $compareResult = $this->comparer->compare('2', 3);
         $this->assertSame(-1, $compareResult);
+    }
+
+    public function testSortCollection()
+    {
+        $coll = $this->collection;
+
+        $coll->add(4);
+        $coll->add(1);
+        $coll->add(0);
+        $coll->add(5);
+
+        $coll->sort($this->comparer);
+        $this->assertSame(array(0, 1, 4, 5), $coll->toArray());
+
+        $this->comparer->setDirection(Comparer::DESC);
+        $coll->sort($this->comparer);
+        $this->assertSame(array(5, 4, 1, 0), $coll->toArray());
     }
 }
