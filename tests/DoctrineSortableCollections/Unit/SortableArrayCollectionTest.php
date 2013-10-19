@@ -11,7 +11,6 @@
 
 use \Mockery as m;
 use DoctrineSortableCollections\SortableArrayCollection;
-use DoctrineSortableCollections\Comparer\ComparerInterface;
 
 /**
  * Class SortableArrayCollectionTest.
@@ -27,11 +26,6 @@ class SortableArrayCollectionTest extends PHPUnit_Framework_TestCase
      * @var SortableArrayCollection
      */
     protected $collection;
-
-    /**
-     * @var ComparerInterface
-     */
-    protected $comparer;
 
     protected function setUp()
     {
@@ -50,9 +44,11 @@ class SortableArrayCollectionTest extends PHPUnit_Framework_TestCase
 
     public function testSortEmptyCollection()
     {
-        $this->comparer->shouldReceive('compare')->never();
+        $c = $this->comparer;
+
+        $c->shouldReceive('compare')->never();
         $this->assertTrue($this->collection->isEmpty());
-        $this->collection->sort($this->comparer);
+        $this->collection->sort($c);
         $this->assertTrue($this->collection->isEmpty());
     }
 
@@ -74,10 +70,14 @@ class SortableArrayCollectionTest extends PHPUnit_Framework_TestCase
         $coll = $this->collection;
         $comp = $this->comparer;
         $comp->shouldReceive('compare')->andReturnUsing(
-            function($e1, $e2) {
-                if($e1 < $e2) return -1;
-                elseif($e1 == $e2) return 0;
-                else return 1;
+            function ($e1, $e2) {
+                if ($e1 < $e2) {
+                    return -1;
+                } elseif ($e1 == $e2) {
+                    return 0;
+                } else {
+                    return 1;
+                }
             }
         );
 

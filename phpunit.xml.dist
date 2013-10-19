@@ -2,8 +2,11 @@
 
 <phpunit bootstrap="tests/bootstrap.php" colors="true">
     <testsuites>
-        <testsuite name="Doctrine Sortable Collections Tests Suite">
-            <directory>tests/DoctrineSortableCollections/</directory>
+        <testsuite name="Unit Tests Suite">
+            <directory>tests/DoctrineSortableCollections/Unit/</directory>
+        </testsuite>
+        <testsuite name="Integration Tests Suite">
+            <directory>tests/DoctrineSortableCollections/Integration/</directory>
         </testsuite>
     </testsuites>
 
