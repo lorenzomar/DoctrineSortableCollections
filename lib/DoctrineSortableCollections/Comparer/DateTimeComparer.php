@@ -23,14 +23,26 @@ use DoctrineSortableCollections\Comparer\Comparer;
  */
 class DateTimeComparer extends Comparer
 {
+    /**
+     * {@inheritdoc}
+     *
+     * @param mixed $e1
+     * @param mixed $e2
+     *
+     * @return mixed
+     * @throws \InvalidArgumentException
+     */
     public function compare($e1, $e2)
     {
+        $e1 = $this->getComparerOperand($e1);
+        $e2 = $this->getComparerOperand($e2);
+
         if (!$e1 instanceof \DateTime) {
-            throw new \InvalidArgumentException("Wrong type. '$e1' must be an instance of DateTime.'");
+            throw new \InvalidArgumentException('Wrong type. $e1 must be an instance of DateTime.');
         }
 
         if (!$e2 instanceof \DateTime) {
-            throw new \InvalidArgumentException("Wrong type. '$e2' must be an instance of DateTime.'");
+            throw new \InvalidArgumentException('Wrong type. $e2 must be an instance of DateTime.');
         }
 
         if ($e1 < $e2) {

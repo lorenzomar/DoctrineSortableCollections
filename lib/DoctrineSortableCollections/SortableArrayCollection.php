@@ -26,22 +26,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 class SortableArrayCollection extends ArrayCollection implements SortableInterface
 {
     /**
-     * {@inheritdoc}
-     */
-    public function sort(ComparerInterface $comparer)
-    {
-        $elements = $this->toArray();
-        @usort($elements, array($comparer, 'compare'));
-        $this->replace($elements);
-
-        return $this;
-    }
-
-    /**
      * Replace current collection elements with new ones.
      *
      * Note: This method isn't necessary if $_elements will be converted from
-     * private to protected
+     * private to protected. In this way performace will be improved as well.
      *
      * @param array $elements array of sorted elements used to replace the original
      * ones
@@ -55,5 +43,17 @@ class SortableArrayCollection extends ArrayCollection implements SortableInterfa
         foreach ($elements as $element) {
             $this->add($element);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function sort(ComparerInterface $comparer)
+    {
+        $elements = $this->toArray();
+        @usort($elements, array($comparer, 'compare'));
+        $this->replace($elements);
+
+        return $this;
     }
 }

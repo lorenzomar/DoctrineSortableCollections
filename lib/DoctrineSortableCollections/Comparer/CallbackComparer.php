@@ -36,13 +36,26 @@ class CallbackComparer extends Comparer
      */
     public function __construct($callback, $direction = self::ASC)
     {
+        $this->setCallback($callback);
+
+        parent::__construct($direction);
+    }
+
+    /**
+     * @param $callback
+     *
+     * @throws \InvalidArgumentException
+     * @return self
+     */
+    public function setCallback($callback)
+    {
         if (!is_callable($callback)) {
             throw new \InvalidArgumentException("Wrong type. '$callback' must be callable");
         }
 
         $this->callback = $callback;
 
-        parent::__construct($direction);
+        return $this;
     }
 
     /**
@@ -58,6 +71,9 @@ class CallbackComparer extends Comparer
      */
     public function compare($e1, $e2)
     {
-        return call_user_func($this->getCallback(), $e1, $e2);
+        $e1 = $this->getComparerOperand($e1);
+        $e2 = $this->getComparerOperand($e2);
+
+        return call_user_func($this->getCallback(), $e1, $e2, $this);
     }
 }
