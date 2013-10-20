@@ -1,5 +1,5 @@
 {
-    "name": "lorenzomar/DoctrineSortableCollections",
+    "name": "lorenzomar/doctrine-sortable-collections",
     "description": "Sortable functions for Doctrine collections library",
     "minimum-stability": "stable",
     "authors": [
