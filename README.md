@@ -17,8 +17,8 @@ oppure aggiungendola al file composer.json
 Utilizzo
 --------
 
-Il funzionamento è semplice.
-`SortableArrayCollection` estende `ArrayCollection` aggiungendo un metodo sort grazie al quale sarà possibile ordinare la collection. L'unico parametro richiesto da `sort` è un'istanza di un "comparatore".
+`SortableArrayCollection` estende `ArrayCollection` aggiungendo un metodo `sort` grazie al quale sarà possibile ordinare la collection. L'unico parametro richiesto da `sort` è un'istanza di un "comparatore".
+
 I comparatori sono oggetti il cui unico compito è quello di comparare due elementi della collection e ritornare:
 * -1 se il primo elemento > del secondo
 * 0 se i due elementi sono identici
