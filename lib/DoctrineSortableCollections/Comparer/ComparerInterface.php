@@ -23,9 +23,9 @@ interface ComparerInterface
      * Compare two element of a collection
      *
      * Return:
-     * $o1 < $o2: 1
-     * $o1 == $o2: 0
-     * $o1 > $o2: -1
+     * $e1 < $e2: 1
+     * $e1 == $e2: 0
+     * $e1 > $e2: -1
      *
      * @param mixed $e1 first element of comparison
      * @param mixed $e2 second element of comparison
