@@ -4,14 +4,16 @@ Questa libreria estende la libreria base di Doctrine aggiungendo funzionalità d
 
 
 ## Installazione
-DoctrineSortableCollections può essere facilmente installato usando composer
+DoctrineSortableCollections può essere facilmente installata usando composer
 
 ```
 composer require lorenzomar/doctrine-sortable-collections
 ```
 
-oppure aggiungendolo al file composer.json
+oppure aggiungendola al file composer.json
 
+
+## Utilizzo
 
 
 Il metodo sort di SortableInterface accetta una parametro solo, un comparatore, il cui unico compito sarà quello di comparare due elementi della collezione
