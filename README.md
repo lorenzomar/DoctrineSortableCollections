@@ -53,8 +53,8 @@ use DoctrineSortableCollections\Comparer\Comparer;
 use DoctrineSortableCollections\Comparer\NumericalComparer;
 
 $collection = new SortableArrayCollection(array(3, 1, 2));
-$ascComparer = NumericalComparer();
-$descComparer = NumericalComparer(Comparer::DESC);
+$ascComparer = new NumericalComparer();
+$descComparer = new NumericalComparer(Comparer::DESC);
 
 $collection->sort($ascComparer); // array(1, 2, 3)
 $collection->sort($descComparer); // array(3, 2, 1)
@@ -73,8 +73,8 @@ $collection = new SortableArrayCollection(array(
     \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
 ));
 
-$ascComparer = DateTimeComparer();
-$descComparer = DateTimeComparer(Comparer::DESC);
+$ascComparer = new DateTimeComparer();
+$descComparer = new DateTimeComparer(Comparer::DESC);
 
 /**
  * array(
@@ -95,6 +95,43 @@ $collection->sort($ascComparer);
 $collection->sort($descComparer);
 ```
 
+Questo esempio mostra come ordinare una lista di stringhe sfruttando `CallbackComparer`
+
+```php
+use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\CallbackComparer;
+
+$collection = new SortableArrayCollection(array(
+    'stringa 2',
+    'stringa 1',
+    'stringa 3'
+));
+
+$callback = function($e1, $e2, $collection) {
+};
+$ascComparer = new CallbackComparer($callback);
+$descComparer = new CallbackComparer($callback, Comparer::DESC);
+
+/**
+ * array(
+ *    'stringa 1',
+ *    'stringa 2',
+ *    'stringa 3'
+ * )
+ */
+$collection->sort($ascComparer);
+
+/**
+ * array(
+ *    'stringa 3',
+ *    'stringa 2',
+ *    'stringa 1'
+ * )
+ */
+$collection->sort($descComparer);
+```
+
 
 About
 =====
@@ -107,4 +144,4 @@ Lorenzo Marzullo - <marzullo.lorenzo@gmail.com>
 License
 -------
 
-DoctrineSortableCollections è rilasciato sotto la licenza MIT - vedere il file 'LICENSE' per i dettagli
+DoctrineSortableCollections è rilasciata sotto licenza MIT - vedere il file 'LICENSE' per i dettagli
