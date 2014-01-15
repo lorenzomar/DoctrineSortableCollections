@@ -1,7 +1,8 @@
 DoctrineSortableCollections
 =============================
 
-Questa libreria estende la libreria base di Doctrine aggiungendo funzionalità di ordinamento alle collections.
+DoctrineSortableCollections è una libreria che aggiunge alla libreria base di Doctrine funzionalità di ordinamento.
+Grazie a DoctrineSortableCollections sarà possibile ordinare liste semplici (composte cioè da numeri, stringhe, date, ecc) o complesse (ad sempio liste contenenti oggetti che si desidera ordinare sulla base dei valori di una o più proprietà, oppure array di array).
 
 Installazione
 -------------
@@ -14,15 +15,18 @@ composer require lorenzomar/doctrine-sortable-collections
 
 oppure aggiungendola al file composer.json
 
+```
+require: {
+    "lorenzomar/doctrine-sortable-collections"
+}
+```
+
 Utilizzo
 --------
 
-DoctrineSortableCollections è una libreria che aggiunge alla libreria base di Doctrine funzionalità di ordinamento.
-Grazie a DoctrineSortableCollections sarà possibile ordinare lista semplici (composte cioè da numeri, stringhe, date, ecc) o complesse (ad sempio liste contenenti oggetti che si desidera ordinare sulla base dei valori di una o più proprietà, oppure array di array).
-
 Alla base di tutto c'è `SortableArrayCollection` che estende `ArrayCollection` e implementa `SortableInterface` aggiungendo un metodo `sort` grazie al quale sarà possibile ordinare la collection. L'unico parametro richiesto da `sort` è un'istanza di `ComparerInterface`.
 
-I comparatori sono oggetti il cui unico compito è quello di confrontare due elementi della collection e ritornare:
+I comparatori sono oggetti il cui unico compito è quello di confrontare due elementi e ritornare:
 * -1 nel caso in cui il primo elemento > del secondo
 * 0 nel caso in cui i due elementi siano identici
 * 1 nel caso in cui il primo elemento < del secondo
