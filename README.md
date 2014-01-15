@@ -28,17 +28,26 @@ Attualmente sono presenti 3 comparatori:
 
 1. `NumericalComparer`, in grado di confrontare due valori numerici di qualsiasi formato (interi, float, esadecimali, binari, ottali)
 2. `DateTimeComparer`, in grado di confrontare due oggetti `DateTime`
-3. `CallbackComparer`, questo comparatore acc
+3. `CallbackComparer`, questo comparatore è il più generico di tutti. Confronta due elementi sfruttando una callback che gli viene fornita. Nel caso in cui nessun altro comparatore risulta essere adatto, si può ripiegare su questo
+
+Tutti i comparatori estendono la classe astratta `Comparer` grazie alla quale si può decidere il verso dell'ordinamento (ascendente o discendente). Di default ascendente. E' possibile passare il verso al `__construct` di `Comparer` oppure usando il metodo `setDirection`.
 
 Esempi
 ------
 
+In questo primo esempio si ordina una lista di numeri con `NumericalComparer`:
+
 ```php
 use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\Comparer;
 use DoctrineSortableCollections\Comparer\NumericalComparer;
 
 $collection = new SortableArrayCollection(array(3, 1, 2));
-$comparer = NumericalComparer();
+$ascComparer = NumericalComparer();
+$descComparer = NumericalComparer(Comparer::DESC);
+
+$collection->sort($ascComparer); // array(1, 2, 3)
+$collection->sort($descComparer); // array(3, 2, 1)
 ```
 
 
