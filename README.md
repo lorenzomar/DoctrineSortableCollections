@@ -63,7 +63,3 @@ License
 -------
 
 DoctrineSortableCollections è rilasciato sotto la licenza MIT - vedere il file 'LICENSE' per i dettagli
-
-
-Il metodo sort di SortableInterface accetta una parametro solo, un comparatore, il cui unico compito sarà quello di comparare due elementi della collezione
-L'interfaccia SortableInterface definisce il metodo sort attraverso il quale la collection
