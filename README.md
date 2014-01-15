@@ -17,7 +17,10 @@ oppure aggiungendola al file composer.json
 Utilizzo
 --------
 
-`SortableArrayCollection` estende `ArrayCollection` aggiungendo un metodo `sort` grazie al quale sarà possibile ordinare la collection. L'unico parametro richiesto da `sort` è un'istanza di `ComparerInterface`.
+DoctrineSortableCollections è una libreria che aggiunge alla libreria base di Doctrine funzionalità di ordinamento.
+Grazie a DoctrineSortableCollections sarà possibile ordinare lista semplici (composte cioè da numeri, stringhe, date, ecc) o complesse (ad sempio liste contenenti oggetti che si desidera ordinare sulla base dei valori di una o più proprietà, oppure array di array).
+
+Alla base di tutto c'è `SortableArrayCollection` che estende `ArrayCollection` e implementa `SortableInterface` aggiungendo un metodo `sort` grazie al quale sarà possibile ordinare la collection. L'unico parametro richiesto da `sort` è un'istanza di `ComparerInterface`.
 
 I comparatori sono oggetti il cui unico compito è quello di confrontare due elementi della collection e ritornare:
 * -1 nel caso in cui il primo elemento > del secondo
@@ -28,9 +31,10 @@ Attualmente sono presenti 3 comparatori:
 
 1. `NumericalComparer`, in grado di confrontare due valori numerici di qualsiasi formato (interi, float, esadecimali, binari, ottali)
 2. `DateTimeComparer`, in grado di confrontare due oggetti `DateTime`
-3. `CallbackComparer`, questo comparatore è il più generico di tutti. Confronta due elementi sfruttando una callback che gli viene fornita. Nel caso in cui nessun altro comparatore risulta essere adatto, si può ripiegare su questo
+3. `CallbackComparer`, questo è il più generico di tutti. Confronta due elementi sfruttando una callback che gli viene fornita dall'utente. In caso nessun altro comparatore risulti adatto, si può ripiegare su questo
 
-Tutti i comparatori estendono la classe astratta `Comparer` grazie alla quale si può decidere il verso dell'ordinamento (ascendente o discendente). Di default ascendente. E' possibile passare il verso al `__construct` di `Comparer` oppure usando il metodo `setDirection`.
+La libreria offre una classe base per i comparatori, `Comparer`, che implementa la possibilità di scegliere il verso dell'ordinamento (ascendente o discendente). Di default ascendente, ma è possibile passare il verso al `__construct` oppure usando il metodo `setDirection`.
+Oltre alla possibilità di scegliere il verso, `Comparer`.
 
 Ordinare liste semplici
 -----------------------
