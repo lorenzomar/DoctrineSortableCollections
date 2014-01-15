@@ -1,13 +1,15 @@
 DoctrineSortableCollections
 =============================
+Questa libreria estende la libreria base di Doctrine aggiungendo funzionalità di ordinamento alle collections.
 
-Questa libreria estende la libreria base di Doctrine aggiungendo funzionalità di ordinamento delle collections.
 
-## Installation
+## Installazione
 DoctrineSortableCollections può essere facilmente installato usando composer
-```php
+
+```
 composer require lorenzomar/doctrine-sortable-collections
 ```
+
 oppure aggiungendolo al file composer.json
 
 
