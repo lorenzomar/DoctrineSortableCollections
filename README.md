@@ -32,10 +32,12 @@ Attualmente sono presenti 3 comparatori:
 
 Tutti i comparatori estendono la classe astratta `Comparer` grazie alla quale si può decidere il verso dell'ordinamento (ascendente o discendente). Di default ascendente. E' possibile passare il verso al `__construct` di `Comparer` oppure usando il metodo `setDirection`.
 
-Esempi
-------
+Ordinare liste semplici
+-----------------------
 
-In questo primo esempio si ordina una lista di numeri con `NumericalComparer`:
+Negli esempi che seguono si vedrà come ordinare delle liste composte da elementi semplici (numeri, date, stringhe).
+
+Questo esempio mostra come ordinare una lista di numeri grazie a `NumericalComparer`
 
 ```php
 use DoctrineSortableCollections\SortableArrayCollection;
@@ -48,6 +50,41 @@ $descComparer = NumericalComparer(Comparer::DESC);
 
 $collection->sort($ascComparer); // array(1, 2, 3)
 $collection->sort($descComparer); // array(3, 2, 1)
+```
+
+Questo esempio mostra come ordinare una lista di date grazie a `DateTimeComparer`
+
+```php
+use DoctrineSortableCollections\SortableArrayCollection;
+use DoctrineSortableCollections\Comparer\Comparer;
+use DoctrineSortableCollections\Comparer\DateTimeComparer;
+
+$collection = new SortableArrayCollection(array(
+    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-02 11:00:00');
+    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-03 11:00:00');
+    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
+));
+
+$ascComparer = DateTimeComparer();
+$descComparer = DateTimeComparer(Comparer::DESC);
+
+/**
+ * array(
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-02 11:00:00');
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-03 11:00:00');
+ * )
+ */
+$collection->sort($ascComparer);
+
+/**
+ * array(
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-03 11:00:00');
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-02 11:00:00');
+ *    \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
+ * )
+ */
+$collection->sort($descComparer);
 ```
 
 
