@@ -25,6 +25,7 @@ I comparatori sono oggetti il cui unico compito è quello di confrontare due ele
 * 1 nel caso in cui il primo elemento < del secondo
 
 Attualmente sono presenti 3 comparatori:
+
 1. `NumericalComparer`, in grado di confrontare due valori numerici di qualsiasi formato (interi, float, esadecimali, binari, ottali)
 2. `DateTimeComparer`, in grado di confrontare due oggetti `DateTime`
 3. `CallbackComparer`, questo comparatore acc
