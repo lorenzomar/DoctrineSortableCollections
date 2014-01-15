@@ -4,24 +4,18 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
 
 namespace DoctrineSortableCollections\Comparer;
 
-use DoctrineSortableCollections\Comparer\ComparerInterface;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
-use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
  * Class Comparer.
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 abstract class Comparer implements ComparerInterface
@@ -62,12 +56,9 @@ abstract class Comparer implements ComparerInterface
      */
     public function setDirection($direction)
     {
-        if (!is_string($direction) || (strtoupper($direction) !== self::ASC && strtoupper($direction) !== self::DESC)) {
+        if (!is_string($direction) || !in_array($direction = strtoupper($direction), array(self::ASC, self::DESC))) {
             throw new \InvalidArgumentException("Wrong direction");
         }
-
-        $direction = strtoupper($direction);
-
 
         $this->direction = $direction;
 

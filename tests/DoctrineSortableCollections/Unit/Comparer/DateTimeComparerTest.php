@@ -4,10 +4,9 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
+
+namespace DoctrineSortableCollections\Tests\Unit\Comparer;
 
 use Mockery as m;
 use DoctrineSortableCollections\Comparer\Comparer;
@@ -18,10 +17,9 @@ use DoctrineSortableCollections\Comparer\DateTimeComparer;
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
-class DateTimeComparerTest extends PHPUnit_Framework_TestCase
+class DateTimeComparerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var DateTimeComparer
@@ -47,8 +45,8 @@ class DateTimeComparerTest extends PHPUnit_Framework_TestCase
 
     public function testAscDirection()
     {
-        $d1 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-10 11:00:00');
-        $d2 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-12 11:00:00');
+        $d1 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-10 11:00:00');
+        $d2 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-12 11:00:00');
 
         $result = $this->comparer->compare($d1, $d2);
         $this->assertSame(-1, $result);
@@ -65,8 +63,8 @@ class DateTimeComparerTest extends PHPUnit_Framework_TestCase
         $c = $this->comparer;
         $c->setDirection(Comparer::DESC);
 
-        $d1 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-10 11:00:00');
-        $d2 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-12 11:00:00');
+        $d1 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-10 11:00:00');
+        $d2 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-12 11:00:00');
 
         $result = $c->compare($d1, $d2);
         $this->assertSame(1, $result);
@@ -84,8 +82,8 @@ class DateTimeComparerTest extends PHPUnit_Framework_TestCase
         $a = m::mock('Symfony\Component\PropertyAccess\PropertyAccessorInterface');
         $p = m::mock('Symfony\Component\PropertyAccess\PropertyPathInterface');
 
-        $date1 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
-        $date2 = DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-02 11:00:00');
+        $date1 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-01 11:00:00');
+        $date2 = \DateTime::createFromFormat('Y-m-d H:i:s', '2013-10-02 11:00:00');
         $data  = array(
             array(
                 'firstName' => 'A first name',

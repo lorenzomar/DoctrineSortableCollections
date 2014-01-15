@@ -4,14 +4,10 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
 
 namespace DoctrineSortableCollections;
 
-use DoctrineSortableCollections\SortableInterface;
 use DoctrineSortableCollections\Comparer\ComparerInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -20,13 +16,12 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
 class SortableArrayCollection extends ArrayCollection implements SortableInterface
 {
     /**
-     * Replace current collection elements with new ones.
+     * Replace current elements with new ones.
      *
      * Note: This method isn't necessary if $_elements will be converted from
      * private to protected. In this way performace will be improved as well.

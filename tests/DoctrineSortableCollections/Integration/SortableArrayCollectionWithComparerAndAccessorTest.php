@@ -4,10 +4,9 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
+
+namespace DoctrineSortableCollections\Tests\Integration;
 
 use DoctrineSortableCollections\Comparer\Comparer;
 use DoctrineSortableCollections\SortableArrayCollection;
@@ -23,10 +22,9 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
-class SortableArrayCollectionWithComparerAndAccessorTest extends PHPUnit_Framework_TestCase
+class SortableArrayCollectionWithComparerAndAccessorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var SortableArrayCollection
@@ -45,31 +43,31 @@ class SortableArrayCollectionWithComparerAndAccessorTest extends PHPUnit_Framewo
                 'firstName' => 'First name 1',
                 'lastName'  => 'Last name 1',
                 'age'       => 22,
-                'birthDate' => DateTime::createFromFormat('Y-m-d H:i:s', '1988-07-30 00:00:01')
+                'birthDate' => \DateTime::createFromFormat('Y-m-d H:i:s', '1988-07-30 00:00:01')
             ),
             array(
                 'firstName' => 'First name 2',
                 'lastName'  => 'Last name 2',
                 'age'       => 17,
-                'birthDate' => DateTime::createFromFormat('Y-m-d H:i:s', '1992-01-06 14:54:23')
+                'birthDate' => \DateTime::createFromFormat('Y-m-d H:i:s', '1992-01-06 14:54:23')
             ),
             array(
                 'firstName' => 'First name 3',
                 'lastName'  => 'Last name 3',
                 'age'       => 56,
-                'birthDate' => DateTime::createFromFormat('Y-m-d H:i:s', '1958-03-19 22:00:00')
+                'birthDate' => \DateTime::createFromFormat('Y-m-d H:i:s', '1958-03-19 22:00:00')
             ),
             array(
                 'firstName' => 'First name 4',
                 'lastName'  => 'Last name 4',
                 'age'       => 30,
-                'birthDate' => DateTime::createFromFormat('Y-m-d H:i:s', '1977-11-30 10:45:00')
+                'birthDate' => \DateTime::createFromFormat('Y-m-d H:i:s', '1977-11-30 10:45:00')
             ),
             array(
                 'firstName' => 'First name 5',
                 'lastName'  => 'Last name 5',
                 'age'       => 11,
-                'birthDate' => DateTime::createFromFormat('Y-m-d H:i:s', '2000-10-13 15:35:01')
+                'birthDate' => \DateTime::createFromFormat('Y-m-d H:i:s', '2000-10-13 15:35:01')
             ),
         ));
 

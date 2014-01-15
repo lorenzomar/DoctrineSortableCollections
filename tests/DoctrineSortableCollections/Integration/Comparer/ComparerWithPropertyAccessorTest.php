@@ -4,10 +4,9 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
+
+namespace DoctrineSortableCollections\Tests\Integration\Comparer;
 
 use DoctrineSortableCollections\Comparer\Comparer;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
@@ -19,10 +18,9 @@ use Symfony\Component\PropertyAccess\PropertyPath;
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
-class ComparerWithPropertyAccessorTest extends PHPUnit_Framework_TestCase
+class ComparerWithPropertyAccessorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Comparer

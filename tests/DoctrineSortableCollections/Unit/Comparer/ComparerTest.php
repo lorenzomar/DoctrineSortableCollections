@@ -4,10 +4,9 @@
  * This file is part of the DoctrineSortableCollections.
  *
  * (c) Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
  */
+
+namespace DoctrineSortableCollections\Tests\Unit\Comparer;
 
 use Mockery as m;
 use DoctrineSortableCollections\Comparer\Comparer;
@@ -18,10 +17,9 @@ use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
  *
  * @package DoctrineSortableCollections
  * @author  Lorenzo Marzullo <marzullo.lorenzo@gmail.com>
- * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link    www.github.com/lorenzomar/doctrine-sortable-collections
  */
-class ComparerTest extends PHPUnit_Framework_TestCase
+class ComparerTest extends \PHPUnit_Framework_TestCase
 {
     protected $comparerFQN = 'DoctrineSortableCollections\Comparer\Comparer';
 
