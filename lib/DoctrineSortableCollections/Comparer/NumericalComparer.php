@@ -40,11 +40,11 @@ class NumericalComparer extends Comparer
         }
 
         if ($e1 < $e2) {
-            return ($this->getDirection() === self::ASC) ? -1 : 1;
+            return ($this->isAsc()) ? -1 : 1;
         } elseif ($e1 == $e2) {
             return 0;
         } else {
-            return ($this->getDirection() === self::ASC) ? 1 : -1;
+            return ($this->isAsc()) ? 1 : -1;
         }
     }
 }
