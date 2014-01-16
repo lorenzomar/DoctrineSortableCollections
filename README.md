@@ -2,7 +2,7 @@ DoctrineSortableCollections
 =============================
 
 DoctrineSortableCollections è una libreria che aggiunge alla libreria base di Doctrine funzionalità di ordinamento.
-Grazie a DoctrineSortableCollections sarà possibile ordinare liste semplici (composte cioè da numeri, stringhe, date, ecc) o complesse (ad sempio liste contenenti oggetti che si desidera ordinare sulla base dei valori di una o più proprietà, oppure array di array).
+Grazie a DoctrineSortableCollections sarà possibile ordinare liste semplici (composte cioè da numeri, stringhe, date, ecc) o complesse (ad sempio liste contenenti oggetti che si desidera ordinare sulla base dei valori di una o più proprietà, oppure array di array) sfruttando la libreria `PropertyAccess` di Symfony.
 
 Installazione
 -------------
@@ -38,7 +38,8 @@ Attualmente sono presenti 3 comparatori:
 3. `CallbackComparer`, questo è il più generico di tutti. Confronta due elementi sfruttando una callback che gli viene fornita dall'utente. In caso nessun altro comparatore risulti adatto, si può ripiegare su questo
 
 La libreria offre una classe base per i comparatori, `Comparer`, che implementa la possibilità di scegliere il verso dell'ordinamento (ascendente o discendente). Di default ascendente, ma è possibile passare il verso al `__construct` oppure usando il metodo `setDirection`.
-Oltre alla possibilità di scegliere il verso, `Comparer`.
+Per eseguire ordinamenti su liste complesse, passare a `Comparer` un'istanza di `PropertyAccessorInterface` e `PropertyPathInterface` grazie ai quali il comparatore potrà accedere ai dati necessari per eseguire il confronto. ([qui](http://symfony.com/doc/current/components/property_access/index.html) si può consultare la documentazione di `PropertyAccess`)
+`Comparer` offre anche le funzionalità base per gestire la libreria `PropertyAccess`.
 
 Ordinare liste semplici
 -----------------------
