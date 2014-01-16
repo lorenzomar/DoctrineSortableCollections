@@ -16,8 +16,8 @@ composer require lorenzomar/doctrine-sortable-collections
 oppure aggiungendola al file composer.json
 
 ```
-require: {
-    "lorenzomar/doctrine-sortable-collections"
+"require": {
+    "lorenzomar/doctrine-sortable-collections": "dev-master"
 }
 ```
 
